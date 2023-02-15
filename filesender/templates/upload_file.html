@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{% block title %}Upload File{% endblock title %}
+{% block content %}
+<div class="container">
+    <form class="form-group" method='POST' enctype='multipart/form-data'>
+        {% csrf_token %}
+        <div class="input-group mb-3">
+            <label class="input-group-text" for=filename>Enter the reciever name:</label>
+            <input class="form-control" type='text' name='sendername'/>
+        </div>
+        <div class="input-group mb-3">
+            <label class="input-group-text" for='file'>Upload your file here: </label>
+            <input class="form-control" type='file' name='file'/>
+        </div>
+        <br/>
+        <button class="btn btn-primary form-control" type='submit'>Upload</button>
+    </form>
+</div>
+{% endblock content %}
